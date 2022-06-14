@@ -1,0 +1,69 @@
+create database salesmen;
+use salesmen;
+show databases;
+create table salesmen(
+salesman_id int primary key,
+name varchar(20),
+city varchar(20),
+commission float
+);
+describe salesmen;
+insert into salesmen values
+(5001,'James Hogg','New York',0.15);
+insert into salesmen values
+(5002,'Nail Knite','Paris',0.13);
+insert into salesmen values
+(5005,'Pit Alex','London',0.11);
+insert into salesmen values
+(5006,'Mc Lyon','Paris',0.14);
+insert into salesmen values
+(5007,'Paul Adam','Rome',0.13);
+insert into salesmen values
+(5003,'Lauson Ren','San Jose',0.12);
+select * from salesmen;
+create database customar;
+use customar;
+show databases;
+create table salesmen(
+salesman_id int primary key,
+name varchar(20),
+city varchar(20),
+commission float
+);
+insert into salesmen values
+(5001,'James Hogg','New York',0.15);
+insert into salesmen values
+(5002,'Nail Knite','Paris',0.13);
+insert into salesmen values
+(5005,'Pit Alex','London',0.11);
+insert into salesmen values
+(5006,'Mc Lyon','Paris',0.14);
+insert into salesmen values
+(5007,'Paul Adam','Rome',0.13);
+insert into salesmen values
+(5003,'Lauson Ren','San Jose',0.12);
+create table customar(
+customer_id int,
+cust_name varchar(20),
+city varchar(20),
+grade int,
+salesman_id int,
+foreign key(salesman_id) references salesmen(salesman_id));
+describe customar;
+insert into customar values
+(3002,'	Nick Rimando','New York',100,5001);
+insert into customar values
+(3007,'Brad Davis','New York',200,5001);
+insert into customar values
+(3005,'Graham Zusi','California',200,5002);
+insert into customar values
+(3008,'Julian Green','london',300,5002);
+insert into customar values
+(3004,'Fabian Johnson','Paris',300,5006);
+insert into customar values
+(3009,'Geoff Cameron','Berlin',100,5003);
+insert into customar values
+(3003,'Jozy Altidor','Moscow',200,5007);
+insert into customar values
+(3001,'Brad Guzan','London',0,5005);
+select * from customar;
